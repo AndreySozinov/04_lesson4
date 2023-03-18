@@ -3,3 +3,12 @@
 # переданного аргумента, а значение — имя аргумента. Если
 # ключ не хешируем, используйте его строковое представление
 
+
+def key_params(**kwargs) -> dict[str, str]:
+    result = {}
+    for key, value in kwargs.items():
+        result[str(value)] = key
+    return result
+
+
+print(key_params(математика=[2, 4], геометрия=5, физика='ноль'))
