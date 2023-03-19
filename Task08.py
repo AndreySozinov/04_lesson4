@@ -18,9 +18,9 @@ def s_replace():
     """
     glob_dict = globals()
     new_glob_dict = glob_dict.copy()
-    for key, value in glob_dict.items():
+    for key, value in new_glob_dict.items():
         if key.endswith('s') and len(key) > 1:
-            new_glob_dict[key.replace('s', '')] = value
+            glob_dict[key.replace('s', '')] = value
             glob_dict[key] = None
 
 
